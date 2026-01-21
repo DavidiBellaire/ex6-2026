@@ -46,6 +46,7 @@ typedef struct {
     int configBaseAttack;
 } GameState;
 
+static void displayMap(GameState* g);
 // Monster functions
 void freeMonster(void* data);
 int compareMonsters(void* a, void* b);
@@ -61,5 +62,13 @@ void addRoom(GameState* g);
 void initPlayer(GameState* g);
 void playGame(GameState* g);
 void freeGame(GameState* g);
+
+// Helpers
+Room* findRoomById(GameState* g, int id);
+Room* findRoomByCoords(GameState* g, int x, int y);
+void printRoomLegend(GameState* g);
+void gamePreview(GameState* g);
+int checkVictory(GameState* g);
+
 
 #endif
