@@ -46,7 +46,6 @@ typedef struct {
     int configBaseAttack;
 } GameState;
 
-static void displayMap(GameState* g);
 // Monster functions
 void freeMonster(void* data);
 int compareMonsters(void* a, void* b);
