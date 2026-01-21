@@ -190,7 +190,7 @@ void addRoom(GameState* g) {
         displayMap(g);
         printRoomLegend(g);
 
-        int attachId = getInt("Attach to room ID:\n");
+        int attachId = getInt("Attach to room ID: ");
         Room* base = findRoomById(g, attachId);
         if (!base) return; // we can assume that but just in case
 
@@ -224,24 +224,24 @@ void addRoom(GameState* g) {
     g->roomCount++;
 
     // adding a monster
-    int addM = getInt("Add monster? (1=Yes, 0=No):\n");
+    int addM = getInt("Add monster? (1=Yes, 0=No): ");
     if (addM == 1) {
         Monster* m = malloc(sizeof(Monster));
-        m->name = getString("Monster name:\n");
-        m->type = getInt("Type (0-4):\n");
-        m->hp = getInt("HP:\n");
+        m->name = getString("Monster name: ");
+        m->type = getInt("Type (0-4): ");
+        m->hp = getInt("HP: ");
         m->maxHp = m->hp;
-        m->attack = getInt("Attack:\n");
+        m->attack = getInt("Attack: ");
         r->monster = m;
     }
 
     // adding an item
-    int addI = getInt("Add item? (1=Yes, 0=No):\n");
+    int addI = getInt("Add item? (1=Yes, 0=No): ");
     if (addI == 1) {
         Item* i = malloc(sizeof(Item));
-        i->name = getString("Item name:\n");
-        i->type = getInt("Type (0=Armor, 1=Sword):\n");
-        i->value = getInt("Value:\n");
+        i->name = getString("Item name: ");
+        i->type = getInt("Type (0=Armor, 1=Sword): ");
+        i->value = getInt("Value: ");
         r->item = i;
     }
 
